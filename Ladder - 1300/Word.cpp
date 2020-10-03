@@ -13,14 +13,11 @@ main(int argc, char* argv[]) {
         if(isupper(ch)) uppercnt ++;
         else lowercnt ++;
 
-    if(uppercnt <= lowercnt)  {
-        for(int idx = 0 ; idx < strbuff.length(); idx++)
-            strbuff[idx] = tolower(strbuff[idx]);
-    }
+    if(uppercnt <= lowercnt)  
+    transform(strbuff.begin(), strbuff.end(), strbuff.begin(), ::tolower);
         
     else 
-        for(int idx = 0 ; idx < strbuff.length() ; idx++)
-            strbuff[idx] = toupper(strbuff[idx]);
+    transform(strbuff.begin(), strbuff.end(), strbuff.begin(), ::toupper);
     cout << strbuff ;
     return 0;
 }
